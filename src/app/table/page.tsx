@@ -58,13 +58,8 @@ const data = [
 ];
 
 export default function GuestsTable() {
-	const [search, setSearch] = useState("");
 	const [page, setPage] = useState(1);
 	const [records, setRecords] = useState(data.slice(0, PAGE_SIZE));
-
-	const filteredData = data.filter((item) =>
-		item.name.toLowerCase().includes(search.toLowerCase()),
-	);
 
 	useEffect(() => {
 		const from = (page - 1) * PAGE_SIZE;
